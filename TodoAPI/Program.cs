@@ -18,6 +18,8 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddScoped<ITodoService, TodoService>();
+builder.Services.Decorate<ITodoService, TodoServiceDecorator>();
+
 builder.Services.AddScoped<ITodoRepository, TodoRepository>();
 
 var app = builder.Build();
